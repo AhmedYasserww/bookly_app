@@ -25,7 +25,7 @@ class BooksDetailsSection extends StatelessWidget {
         ),
         Text(
           bookModel.volumeInfo.title!,
-          style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold,),
+          style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold,),
           textAlign: TextAlign.center,
         ),
         const SizedBox(
@@ -47,8 +47,9 @@ class BooksDetailsSection extends StatelessWidget {
         BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
 
-          rating:bookModel.volumeInfo.averageRating??0,
-          count: bookModel.volumeInfo.ratingsCount??0,
+          //rating:bookModel.volumeInfo.averageRating??0,
+          count: bookModel.volumeInfo.pageCount ?? 0,
+
         ),
         SizedBox(
           height: 25,

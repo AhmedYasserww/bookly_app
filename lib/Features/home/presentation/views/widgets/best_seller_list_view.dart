@@ -10,28 +10,29 @@ class BestSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NewestBooksCubit,NewestBooksState>(
-
+    return BlocBuilder<NewestBooksCubit, NewestBooksState>(
       builder: (context, state) {
-        if (state is NewestBooksSuccess){
-          return ListView.builder(
-
-              physics: const NeverScrollableScrollPhysics(),
-              padding: EdgeInsets.zero,
-              itemCount: state.books.length,
-              itemBuilder: (context, i) {
+        if (state is NewestBooksSuccess) {
+          return SliverList(
+            delegate: SliverChildBuilderDelegate(
+                  (context, index) {
                 return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: BookListViewItem(bookModel: state.books[i],));
-              });
+                  padding: const EdgeInsets.symmetric(vertical: 12,horizontal: 30),
+                  child: BookListViewItem(bookModel: state.books[index]),
+                );
+              },
+              childCount: state.books.length,
+            ),
+          );
+        } else if (state is NewestBooksFailure) {
+          return SliverFillRemaining(
+            child: CustomErrorWidget(errorMessage: state.errorMessage),
+          );
+        } else {
+          return const SliverFillRemaining(
+            child: CustomLoadingIndicator(),
+          );
         }
-        else if(state is NewestBooksFailure){
-          return CustomErrorWidget(errorMessage: state.errorMessage);
-        }
-        else {
-          return const CustomLoadingIndicator();
-        }
-
       },
     );
   }

@@ -13,7 +13,8 @@ class BooksActions extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Row(children: [
-        Expanded(child: CustomButton(
+        Expanded(
+            child: CustomButton(
           text: "Free",
           backgroundColor: Colors.white,
           textColor: Colors.black,
@@ -23,6 +24,7 @@ class BooksActions extends StatelessWidget {
         Expanded(
             child: CustomButton(
           onPressed:()async{
+            print("ahmeeeeeeeeeeeed");
             launchCustomUr(context, bookModel.volumeInfo.previewLink);
 
           },

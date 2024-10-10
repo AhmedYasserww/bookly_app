@@ -20,8 +20,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Define the category here
-    const String category = "fiction"; // Example category
-
     return MultiBlocProvider(
       providers: [
         BlocProvider(

@@ -3,8 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../Core/utils/styles.dart';
 class BookRating extends StatelessWidget {
-  const BookRating({super.key,this.mainAxisAlignment=MainAxisAlignment.start,required this.rating,required this.count});
-final num rating ;
+  const BookRating({super.key,this.mainAxisAlignment=MainAxisAlignment.start,required this.count});
+
 final int count ;
   @override
   final MainAxisAlignment mainAxisAlignment;
@@ -14,7 +14,7 @@ final int count ;
       children:  [
         Icon(  FontAwesomeIcons.solidStar,color:Color(0xffFFDD4F),size: 17,),
         SizedBox(width:6.3,),
-        Text('$rating',style:Styles.textStyle16,),
+        //Text('$rating',style:Styles.textStyle16,),
         SizedBox(width: 9,),
         Opacity(
           opacity: .5,
