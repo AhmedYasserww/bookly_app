@@ -30,7 +30,9 @@ class FeaturedBookListView extends StatelessWidget {
                     onTap: (){
                       GoRouter.of(context).push(AppRouter.kBookDetailsView,extra:state.books[i]);
                     },
-                      child: CustomBookItem(imageUrl: state.books[i].volumeInfo.imageLinks?.thumbnail ?? "")), // تأكد من أنه يتم استخدام الصورة الصغيرة للكتاب
+                      child: CustomBookItem(imageUrl: state.books[i].volumeInfo.imageLinks?.thumbnail ??"https://via.placeholder.com/150"
+
+                      )),
                 );
               },
             ),
@@ -38,7 +40,7 @@ class FeaturedBookListView extends StatelessWidget {
         } else if (state is FeaturedBooksFailure) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
-          return const CustomLoadingIndicator(); // يمكنك استبدالها بعرض خطأ أو حالة أخرى حسب التصميم المطلوب
+          return const CustomLoadingIndicator();
         }
       },
     );

@@ -28,7 +28,8 @@ class SimilarBoxListView extends StatelessWidget {
                   onTap: (){
                     GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: state.books[i]);
                   },
-                    child: CustomBookItem(imageUrl: state.books[i].volumeInfo.imageLinks?.thumbnail?? '',)),
+                    child: CustomBookItem(imageUrl: state.books[i].volumeInfo.imageLinks?.thumbnail?? "https://via.placeholder.com/150"
+                      ,)),
               );
             }),
       );

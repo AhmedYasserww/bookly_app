@@ -18,12 +18,13 @@ class BooksDetailsSection extends StatelessWidget {
         Padding(
             padding: EdgeInsets.symmetric(horizontal: width * .2),
             child: CustomBookItem(
-              imageUrl:(bookModel.volumeInfo.imageLinks?.thumbnail)??'',
+              imageUrl:(bookModel.volumeInfo.imageLinks?.thumbnail)??"https://via.placeholder.com/150",
             )),
         const SizedBox(
           height: 20,
         ),
         Text(
+          maxLines: 2,
           bookModel.volumeInfo.title!,
           style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold,),
           textAlign: TextAlign.center,

@@ -1,4 +1,5 @@
 import 'package:bookly_app1/Core/utils/service_locator.dart';
+import 'package:bookly_app1/Features/Fanorite/presentation/views/favorite_view.dart';
 import 'package:bookly_app1/Features/Splash/presentation/Views/splash_view.dart';
 import 'package:bookly_app1/Features/home/data/models/BookModel.dart';
 import 'package:bookly_app1/Features/home/presentation/manager/similar_books/similar_books_cubit.dart';
@@ -13,6 +14,8 @@ abstract class AppRouter{
   static const kHomeView = '/homeView';
   static const kBookDetailsView ='/bookDetailsView';
   static const kSearchView='/searchView';
+  static const kFavoriteView='/favoriteView';
+
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -33,6 +36,11 @@ abstract class AppRouter{
       GoRoute(
         path: kSearchView,
         builder: (context, state) =>  const SearchView(),
+
+      ),
+      GoRoute(
+        path: kFavoriteView,
+        builder: (context, state) =>  const FavoriteView(),
 
       ),
     ],
