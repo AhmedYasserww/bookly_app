@@ -19,7 +19,7 @@ final BookModel bookModel;
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomBookItem(imageUrl:bookModel.volumeInfo.imageLinks?.thumbnail??""),
+            CustomBookItem(imageUrl:bookModel.volumeInfo.imageLinks?.thumbnail??"https://via.placeholder.com/150"),
            const SizedBox(width: 30,),
             Expanded(
 

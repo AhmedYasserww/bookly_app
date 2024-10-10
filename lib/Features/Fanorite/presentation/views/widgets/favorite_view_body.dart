@@ -1,3 +1,4 @@
+import 'package:bookly_app1/Core/utils/styles.dart';
 import 'package:bookly_app1/Features/Fanorite/presentation/views/widgets/favorite_item_list_view.dart';
 import 'package:flutter/material.dart';
 class FavoriteViewBody extends StatelessWidget {
@@ -7,9 +8,10 @@ class FavoriteViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Your Favorite"),
+        centerTitle: true,
+        title: const Text("Your Favorite",style: Styles.textStyle30,),
       ),
-      body: Column(
+      body: const Column(
         children: [
           Expanded(child: FavoriteItemListView())
         ],
