@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bookly_app1/Core/utils/app_router.dart';
@@ -7,11 +8,24 @@ import 'package:bookly_app1/Features/home/presentation/manager/featured/featured
 import 'package:bookly_app1/Features/home/presentation/manager/newest_books/newest_books_cubit.dart';
 import 'package:bookly_app1/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'Features/Fanorite/data/model/favorite_model.dart';
+import 'Features/Fanorite/presentation/manager/add_book_to_favorite_cubit.dart';
+import 'firebase_options.dart';
 
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   setupServiceLocator();
-  runApp(const MyApp());
+  await Hive.initFlutter();
+  Hive.registerAdapter(FavoriteModelAdapter());
+  await Hive.openBox<FavoriteModel>(kFavoriteBox);
+
+  runApp(
+    const MyApp(),);
 }
 
 class MyApp extends StatelessWidget {
@@ -28,6 +42,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => NewestBooksCubit(getIt.get<HomeRepoImplementation>())..fetchNewestBooks(),
         ),
+        BlocProvider(create: (_) => AddBooKtoFavoriteCubit()),
+
 
       ],
       child: MaterialApp.router(

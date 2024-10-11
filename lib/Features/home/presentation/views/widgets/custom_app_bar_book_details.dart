@@ -16,7 +16,7 @@ class CustomAppBarBookDetails extends StatelessWidget {
             onPressed:(){
 GoRouter.of(context).push(AppRouter.kFavoriteView);
         },
-    icon:const Icon(Icons.favorite)),
+    icon:const Icon(Icons.favorite,size: 32,color: Colors.red,)),
 
 
 

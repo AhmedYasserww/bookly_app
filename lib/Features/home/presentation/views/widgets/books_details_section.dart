@@ -5,6 +5,7 @@ import 'package:bookly_app1/Features/home/presentation/views/widgets/custom_book
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/utils/styles.dart';
+import '../../../../Fanorite/data/model/favorite_model.dart';
 
 class BooksDetailsSection extends StatelessWidget {
   const BooksDetailsSection({super.key,required this.bookModel});
@@ -46,6 +47,8 @@ class BooksDetailsSection extends StatelessWidget {
           height: 14,
         ),
         BookRating(
+          favoriteModel: FavoriteModel.fromBookModel(bookModel), // تحويل البيانات من BookModel إلى FavoriteModel
+
           mainAxisAlignment: MainAxisAlignment.center,
 
           //rating:bookModel.volumeInfo.averageRating??0,

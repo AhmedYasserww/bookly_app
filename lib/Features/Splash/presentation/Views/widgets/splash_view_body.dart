@@ -22,9 +22,9 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
 
   // single responsibility principle  مبدئ ان كل فانكشن او كلاس مسؤولين عن حاجه معينخ
   void navigateToHome() {
-     Future.delayed(const Duration(seconds:3),(){
+     Future.delayed(const Duration(seconds:4),(){
     // Get.to(()=> const HomeView(),transition: Transition.fadeIn,duration: kTransitionDuration);
-       GoRouter.of(context).push(AppRouter.kHomeView);
+       GoRouter.of(context).push(AppRouter.kOnBoardingView);
     });
   }
   @override

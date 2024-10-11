@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../Core/utils/app_router.dart';
+import '../../../../Fanorite/data/model/favorite_model.dart';
 import '../../../../home/presentation/views/widgets/book_rating.dart';
 class SearchResultItem extends StatelessWidget {
   const SearchResultItem({super.key, required this.bookModel});
@@ -62,7 +63,7 @@ class SearchResultItem extends StatelessWidget {
                         ),
                       ),
                       BookRating(
-                       // rating: (bookModel.volumeInfo.averageRating ?? 0).toInt(),
+                        favoriteModel: FavoriteModel.fromBookModel(bookModel), // تحويل البيانات من BookModel إلى FavoriteModel
                         count: bookModel.volumeInfo.pageCount ?? 0,
                       )
                     ],

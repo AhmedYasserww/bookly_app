@@ -1,22 +1,24 @@
+import 'package:bookly_app1/Features/Fanorite/data/model/favorite_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import '../../../../Fanorite/presentation/views/widgets/add_to_favorite.dart';
 import '../../../../../Core/utils/styles.dart';
 
 class BookRating extends StatelessWidget {
+  final FavoriteModel favoriteModel;
   const BookRating({
     super.key,
     this.mainAxisAlignment = MainAxisAlignment.start,
     required this.count,
     this.showFavoriteIcon = true, // new parameter to control visibility of the favorite icon
+    required this.favoriteModel,  // FavoriteModel is required here
   });
 
   final int count;
-  final bool showFavoriteIcon; // new parameter to control visibility
-
-  @override
+  final bool showFavoriteIcon;
   final MainAxisAlignment mainAxisAlignment;
 
+  @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: mainAxisAlignment,
@@ -27,7 +29,6 @@ class BookRating extends StatelessWidget {
           size: 17,
         ),
         const SizedBox(width: 6.3),
-        const SizedBox(width: 9),
         Opacity(
           opacity: .5,
           child: Text(
@@ -38,14 +39,10 @@ class BookRating extends StatelessWidget {
             ),
           ),
         ),
-        if (showFavoriteIcon) // Only show the icon if the flag is true
-          IconButton(
-            icon: const Icon(
-              Icons.favorite_border,
-              color: Colors.red,
-              size: 32,
-            ),
-            onPressed: () {},
+        if (showFavoriteIcon) // Show favorite icon if condition is true
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0), // Add spacing
+            child: AddToFavoriteWidget(favoriteModel: favoriteModel),
           ),
       ],
     );

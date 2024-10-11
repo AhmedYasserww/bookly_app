@@ -43,11 +43,17 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                 },
               ),
                Expanded(child: CustomTextField(
+                 suffixIcon:IconButton(
+                     onPressed:  () {
+      searchController.clear();
+      BlocProvider.of<SearchForBookCubit>(context).searchForBook('');
+    },
+                      icon: const Icon(Icons.clear)),
                  hintText: "Search For Book...",
-                 onPressed: () {
-                   searchController.clear();
-                   BlocProvider.of<SearchForBookCubit>(context).searchForBook('');
-                 },
+                 // onPressed: () {
+                 //   searchController.clear();
+                 //   BlocProvider.of<SearchForBookCubit>(context).searchForBook('');
+                 // },
                  onSubmitted: (query) {
                    context.read<SearchForBookCubit>().searchForBook(searchController.text);
                  },

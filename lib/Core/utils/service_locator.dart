@@ -1,3 +1,4 @@
+import 'package:bookly_app1/Features/Fanorite/presentation/manager/add_book_to_favorite_cubit.dart';
 import 'package:bookly_app1/Features/search/data/repo/search_repo_imp.dart';
 import 'package:bookly_app1/Features/search/presentation/manager/search_for_book_cubit.dart';
 import 'package:dio/dio.dart';
@@ -14,6 +15,8 @@ void setupServiceLocator() {
   ));
   getIt.registerSingleton<SearchRepoImp>(SearchRepoImp(apiService: getIt.get<ApiService>()));
   getIt.registerFactory<SearchForBookCubit>(()=>SearchForBookCubit(getIt<SearchRepoImp>(), ""));
+  getIt.registerSingleton<AddBooKtoFavoriteCubit>(AddBooKtoFavoriteCubit());
 
-      }
+
+}
 

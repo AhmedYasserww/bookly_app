@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
@@ -9,7 +7,8 @@ class CustomTextField extends StatelessWidget {
     this.controller,
     required this.hintText,
     this.onPressed,
-    this.onSubmitted,
+    this.onSubmitted,  this.suffixIcon, this.prefixIcon, this.validator,  this.obscureText =false
+
   });
 
   final void Function(String?)? onSaved;
@@ -17,23 +16,26 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final String hintText;
   final void Function()? onPressed;
-  final void Function(String)? onSubmitted;
+  final void Function(String?)? onSubmitted;
+  final Widget? suffixIcon;
+  final IconData? prefixIcon;
+  final String? Function(String?)? validator;
+  final bool obscureText ;
+
+
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      onChanged: onChanged, // تأكد من تمرير onChanged هنا
-      onSubmitted: onSubmitted,
+    return TextFormField(
+      obscureText: obscureText,
+      validator:validator ,
+      onSaved:onSubmitted ,
+      onChanged: onChanged,
       controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
-        suffixIcon: IconButton(
-          onPressed: onPressed,
-          icon: const Opacity(
-            opacity: .6,
-            child: Icon(Icons.clear, size: 24),
-          ),
-        ),
+        prefixIcon: Icon(prefixIcon,color: Colors.white,),
+        suffixIcon: suffixIcon,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),
