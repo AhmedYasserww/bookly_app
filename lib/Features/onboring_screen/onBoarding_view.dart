@@ -16,8 +16,6 @@ class OnBoardingView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //SvgPicture.asset(Assets.imagesOnboard),
-
             Container(
               width: 300,
               height: 300,
@@ -29,15 +27,12 @@ class OnBoardingView extends StatelessWidget {
 
               ),
             ),
-           // const SizedBox(height: 30),
-            // Title Text
             const Text(
               'Learn language easily with books',
               style: Styles.textStyle30,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
-            // Description Text
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),
               child: Text(
@@ -51,7 +46,6 @@ class OnBoardingView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 40),
-            // Get Started Button
             ElevatedButton(
               onPressed: () {
                 GoRouter.of(context).push(AppRouter.kLogInView);
