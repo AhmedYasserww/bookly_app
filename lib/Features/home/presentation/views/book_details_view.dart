@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bookly_app1/Features/home/data/models/BookModel.dart';
 import 'package:bookly_app1/Features/home/presentation/manager/similar_books/similar_books_cubit.dart';
 import 'package:bookly_app1/Features/home/presentation/views/widgets/book_details_view_body.dart';
@@ -13,13 +15,21 @@ class BookDetailsView extends StatefulWidget {
 
 class _BookDetailsViewState extends State<BookDetailsView> {
   @override
-  @override
   void initState() {
-    // TODO: implement initState
-    BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(category:widget.bookModel.volumeInfo.categories![0]);
+    super.initState(); // تأكد من استدعاء super في بداية الدالة
+    if (widget.bookModel.volumeInfo.categories != null &&
+        widget.bookModel.volumeInfo.categories!.isNotEmpty) {
+      BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(
+        category: widget.bookModel.volumeInfo.categories![0],
+      );
+    } else {
+      print('No categories available for this book.');
+    }
   }
 
   Widget build(BuildContext context) {
+    double height = MediaQuery.sizeOf(context).height;
+    log("height${height.toString()}");
     return Scaffold(
       body: BookDetailsViewBody(bookModel:widget.bookModel,),
     );

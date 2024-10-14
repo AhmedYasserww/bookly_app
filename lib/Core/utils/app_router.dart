@@ -1,6 +1,6 @@
 import 'package:bookly_app1/Core/utils/service_locator.dart';
 import 'package:bookly_app1/Features/Auth/presentaition/views/sign_up_view.dart';
-import 'package:bookly_app1/Features/Fanorite/presentation/views/favorite_view.dart';
+import 'package:bookly_app1/Features/Favorite/presentation/views/favorite_view.dart';
 import 'package:bookly_app1/Features/home/data/models/BookModel.dart';
 import 'package:bookly_app1/Features/home/presentation/manager/similar_books/similar_books_cubit.dart';
 import 'package:bookly_app1/Features/home/presentation/views/book_details_view.dart';
@@ -35,10 +35,7 @@ abstract class AppRouter{
       ),
       GoRoute(
         path: kBookDetailsView,
-        builder: (context, state) => BlocProvider(
-          create: (context) => SimilarBooksCubit(getIt.get<HomeRepoImplementation>()),
-          child: BookDetailsView(bookModel: state.extra as BookModel),
-        ),
+        builder: (context, state) => BookDetailsView(bookModel: state.extra as BookModel),
       ),
       GoRoute(
         path: kSearchView,

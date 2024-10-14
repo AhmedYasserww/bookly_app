@@ -20,7 +20,6 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
 
   }
 
-  // single responsibility principle  مبدئ ان كل فانكشن او كلاس مسؤولين عن حاجه معينخ
   void navigateToHome() {
      Future.delayed(const Duration(seconds:4),(){
     // Get.to(()=> const HomeView(),transition: Transition.fadeIn,duration: kTransitionDuration);
@@ -36,7 +35,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,//بيسنتر العرض بتاع الايميج
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset(AssetsData.logo,),
        SlidingText(slidingAnimation: slidingAnimation)
@@ -44,8 +43,8 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
     );
   }
   void initSlidingAnimation() {
-    animationController = AnimationController(vsync:this,duration:const Duration(seconds: 1));
-    slidingAnimation = Tween<Offset>(begin:const Offset(0,5) , end:const Offset(0,0)).animate(animationController);
+    animationController = AnimationController(vsync:this,duration:const Duration(seconds: 2));
+    slidingAnimation = Tween<Offset>(begin:const Offset(0,6) , end:const Offset(0,0)).animate(animationController);
     super.initState();
     animationController.forward();
   }

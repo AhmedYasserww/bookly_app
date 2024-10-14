@@ -45,18 +45,18 @@ class _LogInViewState extends State<LogInView> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 115,),
-                Text("Welcome",style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w600),),
+                Text("Welcome",style: Styles.textStyle20(context).copyWith(fontWeight: FontWeight.w600),),
                 Text("Sign In",style: const TextStyle(fontSize: 26).copyWith(fontWeight: FontWeight.bold),),
                 const SizedBox(height:30,),
-                const Align(
+                 Align(
                   alignment: Alignment.topLeft,
-                    child: Text("Email",style: Styles.textStyle18,)),
+                    child: Text("Email",style: Styles.textStyle18(context),)),
                 const SizedBox(height: 9,),
                EmailField(emailController: emailController),
                 const SizedBox(height: 30,),
-                const Align(
+                 Align(
                   alignment: Alignment.topLeft,
-                    child: Text("PassWord",style: Styles.textStyle18,)),
+                    child: Text("PassWord",style: Styles.textStyle18(context),)),
                 const SizedBox(height: 9,),
                 PasswordField(
                   passwordController: passwordController,
@@ -68,9 +68,9 @@ class _LogInViewState extends State<LogInView> {
                   },
                 ),
                 const SizedBox(height: 10,),
-                const Align(
+                 Align(
                   alignment: Alignment.bottomRight,
-                    child:  Text("Forget Password ?",style: Styles.textStyle14,)),
+                    child:  Text("Forget Password ?",style: Styles.textStyle14(context),)),
                 const SizedBox(height: 60,),
                 CustomButtonDetails(
                   globalKey: globalKey,

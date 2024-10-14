@@ -1,5 +1,6 @@
-import 'package:bookly_app1/Features/Fanorite/data/model/favorite_model.dart';
-import 'package:bookly_app1/Features/Fanorite/presentation/manager/add_book_to_favorite_cubit.dart';
+
+import 'package:bookly_app1/Features/Favorite/data/model/favorite_model.dart';
+import 'package:bookly_app1/Features/Favorite/presentation/manager/add_book_to_favorite_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';

@@ -1,7 +1,7 @@
+import 'package:bookly_app1/Features/Favorite/presentation/manager/add_book_to_favorite_cubit.dart';
+import 'package:bookly_app1/Features/Favorite/presentation/views/widgets/favorite_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bookly_app1/Features/Fanorite/presentation/manager/add_book_to_favorite_cubit.dart';
-import 'package:bookly_app1/Features/Fanorite/presentation/views/widgets/favorite_item.dart';
 import 'package:bookly_app1/Features/home/presentation/views/widgets/custom_empty_screen.dart';
 import 'package:bookly_app1/Features/home/presentation/views/widgets/custom_loading_indicator.dart';
 import 'package:bookly_app1/Features/home/presentation/views/widgets/custom_widget_error.dart';

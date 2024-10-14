@@ -27,18 +27,18 @@ class OnBoardingView extends StatelessWidget {
 
               ),
             ),
-            const Text(
+             Text(
               'Learn language easily with books',
-              style: Styles.textStyle30,
+              style: Styles.textStyle30(context),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Text(
                 'Read favorite books in their original language with parallel translation',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 18,
                   color: Colors.grey[500],
                   fontWeight: FontWeight.w400,
                 ),
@@ -54,7 +54,7 @@ class OnBoardingView extends StatelessWidget {
                 backgroundColor:  const Color(0xff303434),
                 padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
               ),
-              child:  Text('Get Started',style: Styles.textStyle20.copyWith(color: Colors.white),),
+              child:  Text('Get Started',style: Styles.textStyle20(context).copyWith(color: Colors.white),),
             ),
           ],
         ),

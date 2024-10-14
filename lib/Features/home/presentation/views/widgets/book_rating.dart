@@ -1,7 +1,7 @@
-import 'package:bookly_app1/Features/Fanorite/data/model/favorite_model.dart';
+import 'package:bookly_app1/Features/Favorite/data/model/favorite_model.dart';
+import 'package:bookly_app1/Features/Favorite/presentation/views/widgets/add_to_favorite.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../../Fanorite/presentation/views/widgets/add_to_favorite.dart';
 import '../../../../../Core/utils/styles.dart';
 
 class BookRating extends StatelessWidget {
@@ -31,11 +31,14 @@ class BookRating extends StatelessWidget {
         const SizedBox(width: 6.3),
         Opacity(
           opacity: .5,
-          child: Text(
-            "($count)",
-            style: Styles.textStyle14.copyWith(
-              color: const Color(0xffFFFFFF),
-              fontWeight: FontWeight.w600,
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              "($count)",
+              style: Styles.textStyle14(context).copyWith(
+                color: const Color(0xffFFFFFF),
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ),

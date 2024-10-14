@@ -1,4 +1,4 @@
-import 'package:bookly_app1/Features/Fanorite/data/model/favorite_model.dart';
+import 'package:bookly_app1/Features/Favorite/data/model/favorite_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/utils/styles.dart';
@@ -11,9 +11,10 @@ final FavoriteModel favoriteModel ;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const SizedBox(height: 16,),
         Text(
           favoriteModel.title,
-          style: Styles.textStyle20.copyWith(
+          style: Styles.textStyle20(context).copyWith(
             fontFamily: "GTSectraFine",
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -25,7 +26,7 @@ final FavoriteModel favoriteModel ;
         // المؤلف
         Text(
         favoriteModel.author,
-          style: Styles.textStyle14.copyWith(
+          style: Styles.textStyle14(context).copyWith(
             color: Colors.grey.shade400,
           ),
           maxLines: 1,
@@ -38,7 +39,7 @@ final FavoriteModel favoriteModel ;
 
             Text(
               "Free",
-              style: Styles.textStyle20.copyWith(
+              style: Styles.textStyle20(context).copyWith(
                 color: Colors.greenAccent,
                 fontWeight: FontWeight.bold,
               ),
@@ -54,7 +55,7 @@ final FavoriteModel favoriteModel ;
         const SizedBox(height: 8),
         Text(
           favoriteModel.publisher,
-          style: Styles.textStyle14.copyWith(
+          style: Styles.textStyle14(context).copyWith(
             color: Colors.grey.shade400,
           ),
           maxLines: 1,

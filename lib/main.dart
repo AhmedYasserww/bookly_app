@@ -1,3 +1,6 @@
+import 'package:bookly_app1/Features/Favorite/data/model/favorite_model.dart';
+import 'package:bookly_app1/Features/Favorite/presentation/manager/add_book_to_favorite_cubit.dart';
+import 'package:bookly_app1/Features/home/presentation/manager/similar_books/similar_books_cubit.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,8 +12,6 @@ import 'package:bookly_app1/Features/home/presentation/manager/newest_books/newe
 import 'package:bookly_app1/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'Features/Fanorite/data/model/favorite_model.dart';
-import 'Features/Fanorite/presentation/manager/add_book_to_favorite_cubit.dart';
 import 'firebase_options.dart';
 
 
@@ -43,7 +44,9 @@ class MyApp extends StatelessWidget {
           create: (context) => NewestBooksCubit(getIt.get<HomeRepoImplementation>())..fetchNewestBooks(),
         ),
         BlocProvider(create: (_) => AddBooKtoFavoriteCubit()),
-
+    BlocProvider(
+    create: (context) => SimilarBooksCubit(getIt.get<HomeRepoImplementation>()),
+    )
 
       ],
       child: MaterialApp.router(

@@ -6,6 +6,7 @@ class Assets {
   static const String fontsGTSectraFineRegular = 'images/fonts/GTSectraFineRegular.ttf';
   static const String imagesBookApp1 = 'images/bookApp1.webp';
   static const String imagesLogo = 'images/Logo.png';
+  static const String imagesNull = 'images/null.png';
   static const String imagesOn = 'images/on.jpg';
   static const String imagesOnboard = 'images/onboard.svg';
   static const String imagesOnnn = 'images/onnn.png';

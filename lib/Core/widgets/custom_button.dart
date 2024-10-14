@@ -27,7 +27,7 @@ class CustomButton extends StatelessWidget {
           borderRadius:borderRadius ??BorderRadius.circular(16),
         )),
           onPressed:(){}, child:Text(text,
-        style:Styles.textStyle16.copyWith(
+        style:Styles.textStyle16(context).copyWith(
             fontWeight: FontWeight.w900,
             color: textColor,
           fontSize:fontSize

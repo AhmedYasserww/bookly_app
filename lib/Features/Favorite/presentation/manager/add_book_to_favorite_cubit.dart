@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:bookly_app1/Features/Fanorite/data/model/favorite_model.dart';
+import 'package:bookly_app1/Features/Favorite/data/model/favorite_model.dart';
 import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';
 

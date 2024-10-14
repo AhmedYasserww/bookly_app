@@ -15,7 +15,7 @@ class SimilarBoxListView extends StatelessWidget {
   builder: (context, state) {
     if(state is SimilarBooksSuccess){
       return SizedBox(
-        height:MediaQuery.of(context).size.height * .15,
+        height:MediaQuery.of(context).size.height * .20,
         child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: state.books.length,
@@ -28,7 +28,7 @@ class SimilarBoxListView extends StatelessWidget {
                   onTap: (){
                     GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: state.books[i]);
                   },
-                    child: CustomBookItem(imageUrl: state.books[i].volumeInfo.imageLinks?.thumbnail?? "https://via.placeholder.com/150"
+                    child: CustomBookItem(imageUrl: state.books[i].volumeInfo.imageLinks?.thumbnail?? "https://dummyimage.com/150x150/cccccc/000000&text=No+Image"
                       ,)),
               );
             }),

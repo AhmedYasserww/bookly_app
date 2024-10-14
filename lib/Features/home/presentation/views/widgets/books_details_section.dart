@@ -1,3 +1,4 @@
+import 'package:bookly_app1/Features/Favorite/data/model/favorite_model.dart';
 import 'package:bookly_app1/Features/home/data/models/BookModel.dart';
 import 'package:bookly_app1/Features/home/presentation/views/widgets/book_action.dart';
 import 'package:bookly_app1/Features/home/presentation/views/widgets/book_rating.dart';
@@ -5,8 +6,6 @@ import 'package:bookly_app1/Features/home/presentation/views/widgets/custom_book
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/utils/styles.dart';
-import '../../../../Fanorite/data/model/favorite_model.dart';
-
 class BooksDetailsSection extends StatelessWidget {
   const BooksDetailsSection({super.key,required this.bookModel});
   final BookModel bookModel;
@@ -19,7 +18,7 @@ class BooksDetailsSection extends StatelessWidget {
         Padding(
             padding: EdgeInsets.symmetric(horizontal: width * .2),
             child: CustomBookItem(
-              imageUrl:(bookModel.volumeInfo.imageLinks?.thumbnail)??"https://via.placeholder.com/150",
+              imageUrl:(bookModel.volumeInfo.imageLinks?.thumbnail)??"https://dummyimage.com/150x150/cccccc/000000&text=No+Image",
             )),
         const SizedBox(
           height: 20,
@@ -27,7 +26,7 @@ class BooksDetailsSection extends StatelessWidget {
         Text(
           maxLines: 2,
           bookModel.volumeInfo.title!,
-          style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold,),
+          style: Styles.textStyle20(context).copyWith(fontWeight: FontWeight.bold,),
           textAlign: TextAlign.center,
         ),
         const SizedBox(
@@ -37,13 +36,13 @@ class BooksDetailsSection extends StatelessWidget {
           opacity: .7,
           child: Text(
             bookModel.volumeInfo.authors?[0]??'',
-            style: Styles.textStyle18.copyWith(
+            style: Styles.textStyle18(context).copyWith(
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.italic,
             ),
           ),
         ),
-        SizedBox(
+       const  SizedBox(
           height: 14,
         ),
         BookRating(

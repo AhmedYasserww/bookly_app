@@ -66,16 +66,16 @@ class _SearchViewBodyState extends State<SearchViewBody> {
           ),
         ),
         const SizedBox(height: 16),
-        const Expanded(
+         Expanded(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: CustomScrollView(
               slivers: [
                 SliverToBoxAdapter(
-                  child: Text("Result", style: Styles.textStyle18),
+                  child: Text("Result", style: Styles.textStyle18(context)),
                 ),
-                SliverToBoxAdapter(child: SizedBox(height: 16)),
-                SearchResultListView(),
+                const SliverToBoxAdapter(child: SizedBox(height: 16)),
+                const SearchResultListView(),
               ],
             ),
           ),

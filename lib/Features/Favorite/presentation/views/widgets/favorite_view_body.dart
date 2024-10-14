@@ -1,6 +1,5 @@
 import 'package:bookly_app1/Core/utils/styles.dart';
-import 'package:bookly_app1/Features/Fanorite/presentation/manager/add_book_to_favorite_cubit.dart';
-import 'package:bookly_app1/Features/Fanorite/presentation/views/widgets/favorite_item_list_view.dart';
+import 'package:bookly_app1/Features/Favorite/presentation/views/widgets/favorite_item_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 class FavoriteViewBody extends StatelessWidget {
@@ -11,7 +10,7 @@ class FavoriteViewBody extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Your Favorite", style: Styles.textStyle30),
+        title:  Text("Your Favorite", style: Styles.textStyle30(context)),
       ),
       body: const Column(
         children: [

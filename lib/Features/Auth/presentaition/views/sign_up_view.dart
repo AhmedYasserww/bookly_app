@@ -55,37 +55,40 @@ class _SignUpViewState extends State<SignUpView> {
             child: Column(
               children: [
                 const SizedBox(height: 75),
-                const Text(
+                 Text(
                   "Create Account",
-                  style: Styles.textStyle30,
+                  style: Styles.textStyle30(context),
                 ),
-                const Text("Fill your information below or register with\n your social media accont .",style: Styles.textStyle14, textAlign: TextAlign.center,),
+                 Text("Fill your information below or register with\n your social media accont ."
+                  ,style: Styles.textStyle14(context),
+                   textAlign: TextAlign.center,
+                 ),
                 const SizedBox(height: 30),
-                const Align(
+                 Align(
                     alignment: Alignment.topLeft,
-                    child: Text("UserName",style: Styles.textStyle18,)),
+                    child: Text("UserName",style: Styles.textStyle18(context),)),
                 const SizedBox(height: 9,),
                 NameField(nameController: nameController),
                 const SizedBox(
                   height: 21,
                 ),
-                const Align(
+                 Align(
                     alignment: Alignment.topLeft,
-                    child: Text("PhoneNumber",style: Styles.textStyle18,)),
+                    child: Text("PhoneNumber",style: Styles.textStyle18(context),)),
                 const SizedBox(height: 9,),
                 PhoneNumberField(phoneController: phoneNumberController),
                 const SizedBox(
                   height: 21,
                 ),
-                const Align(
+                 Align(
                     alignment: Alignment.topLeft,
-                    child: Text("Email",style: Styles.textStyle18,)),
+                    child: Text("Email",style: Styles.textStyle18(context),)),
                 const SizedBox(height: 9,),
                 EmailField(emailController: emailController),
                 const SizedBox(height: 21),
-                const Align(
+                 Align(
                     alignment: Alignment.topLeft,
-                    child: Text("Password",style: Styles.textStyle18,)),
+                    child: Text("Password",style: Styles.textStyle18(context),)),
                 const SizedBox(height: 9,),
                 PasswordField(
                   passwordController: passwordController,

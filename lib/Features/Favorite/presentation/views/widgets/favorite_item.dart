@@ -1,10 +1,8 @@
-import 'package:bookly_app1/Features/Fanorite/data/model/favorite_model.dart';
-import 'package:bookly_app1/Features/Fanorite/presentation/views/widgets/favorite_item_details.dart';
-import 'package:bookly_app1/constants.dart';
+import 'package:bookly_app1/Features/Favorite/data/model/favorite_model.dart';
+import 'package:bookly_app1/Features/Favorite/presentation/views/widgets/favorite_item_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hive/hive.dart';
 import '../../../../home/presentation/views/widgets/custom_book_item.dart';
 import '../../manager/add_book_to_favorite_cubit.dart';
 
